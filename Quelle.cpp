@@ -24,7 +24,7 @@ int main() {
     auto xoutEdgeRgb = pipeline.create<dai::node::XLinkOut>();
     auto xinEdgeCfg = pipeline.create<dai::node::XLinkIn>();
 
-    const auto edgeLeftStr = "edge left";
+    const auto edgeLeftStr = "edgeing left";
     const auto edgeRightStr = "edge right";
     const auto edgeRgbStr = "edge rgb";
     const auto edgeCfgStr = "edge cfg";
