@@ -3,8 +3,9 @@
 // Includes common necessary includes for development using depthai library
 #include "depthai/depthai.hpp"
 #include "opencv2/opencv.hpp"
+#include "edge_detection.h"
 
-int main() {
+void runEdgeDetection() {
     using namespace std;
 
     // Create pipeline
@@ -84,32 +85,26 @@ int main() {
         cv::imshow(edgeRgbStr, edgeRgbFrame);
 
         int key = cv::waitKey(1);
+        if (key == 'q' || key == 'Q') break;
         switch (key) {
-        case 'q':
-            return 0;
-            break;
-
-        case '1': {
-            std::cout << "Switching sobel filter kernel." << std::endl;
+        case '3': {
+            std::cout << "Switching to Sobel kernel set 3." << std::endl;
             dai::EdgeDetectorConfig cfg;
             std::vector<std::vector<int>> sobelHorizontalKernel = { {1, 0, -1}, {2, 0, -2}, {1, 0, -1} };
             std::vector<std::vector<int>> sobelVerticalKernel = { {1, 2, 1}, {0, 0, 0}, {-1, -2, -1} };
             cfg.setSobelFilterKernels(sobelHorizontalKernel, sobelVerticalKernel);
             edgeCfgQueue->send(cfg);
         } break;
-
-        case '2': {
-            std::cout << "Switching sobel filter kernel." << std::endl;
+        case '4': {
+            std::cout << "Switching to Sobel kernel set 4." << std::endl;
             dai::EdgeDetectorConfig cfg;
             std::vector<std::vector<int>> sobelHorizontalKernel = { {3, 0, -3}, {10, 0, -10}, {3, 0, -3} };
             std::vector<std::vector<int>> sobelVerticalKernel = { {3, 10, 3}, {0, 0, 0}, {-3, -10, -3} };
             cfg.setSobelFilterKernels(sobelHorizontalKernel, sobelVerticalKernel);
             edgeCfgQueue->send(cfg);
         } break;
-
         default:
             break;
         }
     }
-    return 0;
 }

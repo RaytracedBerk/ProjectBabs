@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\bberk\source\optional\optional\include;C:\Users\bberk\source\opencv\build\include;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\lib\cmake\depthai\dependencies\include;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\bberk\source\optional\optional\include;C:\Users\bberk\source\opencv\build\include;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\lib\cmake\depthai\dependencies\include;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\include;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\include\depthai;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\bberk\source\opencv\build\x64\vc16\lib;C:\Users\bberk\Documents\BabsLibrary\depthai-core-v2.30.0-win64\depthai-core-v2.30.0-win64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,6 +134,11 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="edge_detection.cpp" />
+    <ClCompile Include="rgb_depth_aligned.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="edge_detection.h" />
+    <ClInclude Include="rgb_depth_aligned.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
