@@ -12,6 +12,7 @@ void runEdgeDetection() {
     dai::Pipeline pipeline;
 
     // Define sources and outputs
+    //create pipelines
     auto camRgb = pipeline.create<dai::node::ColorCamera>();
     auto monoLeft = pipeline.create<dai::node::MonoCamera>();
     auto monoRight = pipeline.create<dai::node::MonoCamera>();
