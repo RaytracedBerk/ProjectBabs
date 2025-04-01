@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Quelle.cpp">
+    <ClCompile Include="edge_detection.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
